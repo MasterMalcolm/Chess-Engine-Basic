@@ -12,13 +12,13 @@ MAX_FPS = 15
 IMAGES = {}
 
 '''
-Initialize a global dictionary of images. This will be called exactyl once in the main
+Initialize a global dictionary of images. This will be called exactly once in the main
 '''
 def loadImages():
     pieces = ['wP', 'wR', 'wB', 'wN', 'wK', 'wQ', 'bP', 'bR', 'bB', 'bN', 'bK', 'bQ']
     for piece in pieces:
         IMAGES[piece] = p.transform.scale(p.image.load("images/" + piece + ".png"), (SQ_SIZE, SQ_SIZE))
-    # We can access an image by saying 'IMAGES['wp']'
+    # We can access an image by saying 'IMAGES['wP']'
 
 '''
 The main driver for our code. This will handle user input and update the graphics
@@ -37,6 +37,7 @@ def main():
         for e in p.event.get():
             if e.type == p.QUIT:
                 running = False
+            # mouse handler
             elif e.type == p.MOUSEBUTTONDOWN:
                 location = p.mouse.get_pos() # (x, y) location of mouse
                 col = location[0]//SQ_SIZE
@@ -53,6 +54,10 @@ def main():
                     gs.makeMove(move)
                     sqSelected = () #reset user clicks
                     playerClicks = []
+            # key handlers
+            elif e.type == p.KEYDOWN:
+                if e.key == p.K_z: # undo when 'z' is pressed
+                    gs.undoMove() 
 
         drawGameState(screen, gs)
         clock.tick(MAX_FPS)
