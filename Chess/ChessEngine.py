@@ -1,5 +1,5 @@
 """
-This class is stores all the information about the current state of a chess game. 
+This class stores all the information about the current state of a chess game. 
 It will also determine the valid moves at the current state. It will also keep a move log.
 """
 class GameState():
