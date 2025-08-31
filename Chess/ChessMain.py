@@ -12,7 +12,7 @@ MAX_FPS = 15
 IMAGES = {}
 
 '''
-Initialize a global dictionary of images. This will be called exactyl once in the main
+Initialize a global dictionary of images. This will be called exactly once in the main
 '''
 def loadImages():
     pieces = ['wP', 'wR', 'wB', 'wN', 'wK', 'wQ', 'bP', 'bR', 'bB', 'bN', 'bK', 'bQ']
