@@ -1,0 +1,1 @@
+This Chess Engine was created with the PyGame library. It has basic move functions like a real chess board. There is no game logic or undo moves. This is for experienced chess players who know all the rules. 
